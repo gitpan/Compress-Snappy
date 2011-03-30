@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use parent qw(Exporter);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 $VERSION = eval $VERSION;
 
 eval {
@@ -16,7 +16,7 @@ eval {
     DynaLoader::bootstrap(__PACKAGE__, $VERSION);
 };
 
-our @EXPORT = qw(compress decompress);
+our @EXPORT = qw(compress decompress uncompress);
 
 
 1;
@@ -29,7 +29,7 @@ Compress::Snappy - Perl interface to Google's Snappy (de)compressor
 
 =head1 SYNOPSIS
 
-    use Compress::
+    use Compress::Snappy;
 
     my $dest = compress($source);
     my $dest = decompress($source);
@@ -55,6 +55,8 @@ Compresses the given buffer and returns the resulting string. The input
 buffer can be either a scalar or a scalar reference.
 
 =head2 decompress
+
+=head2 uncompress
 
     $string = decompress($buffer)
 
