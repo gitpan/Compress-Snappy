@@ -1,5 +1,3 @@
-#define PERL_NO_GET_CONTEXT
-
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
@@ -21,7 +19,10 @@ PREINIT:
     size_t max_compressed_len, compressed_len;
     void *working_memory;
 CODE:
+    if (SvROK(buffer)) buffer = SvRV(buffer);
+    if (! SvOK(buffer)) XSRETURN_NO;
     in = SvPVbyte(buffer, len);
+    if (! len) XSRETURN_NO;
     max_compressed_len = snappy_max_compressed_length(len);
     Newx(out, max_compressed_len, char);
     if (! out) XSRETURN_UNDEF;
@@ -48,7 +49,10 @@ PREINIT:
     STRLEN len;
     size_t decompressed_len;
 CODE:
+    if (SvROK(buffer)) buffer = SvRV(buffer);
+    if (! SvOK(buffer)) XSRETURN_NO;
     in = SvPVbyte(buffer, len);
+    if (! len) XSRETURN_NO;
     if (! snappy_get_uncompressed_length(in, len, &decompressed_len))
         XSRETURN_UNDEF;
     Newx(out, decompressed_len, char);
