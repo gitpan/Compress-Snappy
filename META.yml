@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Compress-Snappy
-version:            0.05
+version:            0.06
 abstract:           Perl interface to Google's Snappy (de)compressor
 author:
     - gray <gray@cpan.org>
@@ -11,7 +11,8 @@ configure_requires:
 build_requires:
     Test::More:  0.82
 requires:
-    parent:  0
+    parent:    0
+    XSLoader:  0
 resources:
     repository:  http://github.com/gray/compress-snappy
 no_index:

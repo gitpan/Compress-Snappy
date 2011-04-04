@@ -4,18 +4,13 @@ use strict;
 use warnings;
 use parent qw(Exporter);
 
-our $VERSION    = '0.05';
+use XSLoader;
+
+our $VERSION    = '0.06';
 our $XS_VERSION = $VERSION;
 $VERSION = eval $VERSION;
 
-eval {
-    require XSLoader;
-    XSLoader::load(__PACKAGE__, $XS_VERSION);
-    1;
-} or do {
-    require DynaLoader;
-    DynaLoader::bootstrap(__PACKAGE__, $XS_VERSION);
-};
+XSLoader::load(__PACKAGE__, $XS_VERSION);
 
 our @EXPORT = qw(compress decompress uncompress);
 
