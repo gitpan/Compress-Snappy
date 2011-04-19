@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Compress-Snappy
-version:            0.11
+version:            0.11_1
 abstract:           Perl interface to Google's Snappy (de)compressor
 author:
     - gray <gray@cpan.org>
