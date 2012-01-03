@@ -1,10 +1,13 @@
 Revision history for Compress-Snappy
 
+0.13  Mon Jan  2 23:55:02 UTC 2012
+    - Removed -Wall compiler flag because it is not portable.
+      It was also overriding CCFLAGS instead of updating it. (RT #73604)
+    - Fixed portability issue with sizeof(void). (RT #72859)
+    - Updated ppport.h.
+
 0.12  Fri Apr 29 05:56:00 UTC 2011
     - No changes; promoted last development version to stable.
-
-0.11_3  Wed Apr 27 19:46:12 UTC 2011
-    - Added another possible fix for PowerPC.
 
 0.11_2  Wed Apr 20 04:23:32 UTC 2011
     - Added possible fix for Darwin PowerPC.
