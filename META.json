@@ -4,7 +4,7 @@
       "gray <gray@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.113640",
+   "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.120530",
    "license" : [
       "perl_5"
    ],
@@ -27,13 +27,13 @@
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : 0
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "runtime" : {
          "requires" : {
-            "XSLoader" : 0,
-            "parent" : 0
+            "XSLoader" : "0",
+            "parent" : "0"
          }
       }
    },
@@ -43,5 +43,5 @@
          "url" : "http://github.com/gray/compress-snappy"
       }
    },
-   "version" : "0.13"
+   "version" : "0.14"
 }
