@@ -2,6 +2,14 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+use lib qw(inc);
+use Devel::CheckLib;
+
+my $ctz = check_lib(
+    lib      => 'c',
+    function => 'return (__builtin_ctzll(0x100000000LL) != 32);'
+) ? '-DHAVE_BUILTIN_CTZ' : '';
+
 my %conf = (
     NAME           => 'Compress::Snappy',
     AUTHOR         => 'gray <gray@cpan.org>',
@@ -19,8 +27,7 @@ my %conf = (
         },
     },
 
-    DEFINE  => pack('L', 1) ne pack('N', 1)
-        ? '-D__LITTLE_ENDIAN' : '-D__BIG_ENDIAN',
+    DEFINE  => $ctz,
 
     dist   => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean  => { FILES    => 'Compress-Snappy-*' },

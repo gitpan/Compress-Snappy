@@ -22,4 +22,4 @@ requires:
   parent: 0
 resources:
   repository: http://github.com/gray/compress-snappy
-version: 0.15
+version: 0.16
