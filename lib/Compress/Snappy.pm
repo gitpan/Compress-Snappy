@@ -6,7 +6,7 @@ use parent qw(Exporter);
 
 use XSLoader;
 
-our $VERSION    = '0.19';
+our $VERSION    = '0.20';
 our $XS_VERSION = $VERSION;
 $VERSION = eval $VERSION;
 
@@ -147,7 +147,7 @@ L<http://search.cpan.org/dist/Compress-Snappy/>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011-2012 gray <gray at cpan.org>, all rights reserved.
+Copyright (C) 2011-2013 gray <gray at cpan.org>, all rights reserved.
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
