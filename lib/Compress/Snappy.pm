@@ -3,16 +3,17 @@ package Compress::Snappy;
 use strict;
 use warnings;
 
-use Exporter qw(import);
+use Exporter;
 use XSLoader;
 
-our $VERSION    = '0.21';
+our $VERSION    = '0.22';
 our $XS_VERSION = $VERSION;
 $VERSION = eval $VERSION;
 
 XSLoader::load(__PACKAGE__, $XS_VERSION);
 
 our @EXPORT = qw(compress decompress uncompress);
+*import = \&Exporter::import;
 
 
 1;
