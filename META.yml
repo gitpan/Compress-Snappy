@@ -5,9 +5,10 @@ author:
 build_requires:
   Test::More: 0.82
 configure_requires:
-  ExtUtils::MakeMaker: 0
+  Devel::CheckLib: 0
+  ExtUtils::MakeMaker: 6.52
 dynamic_config: 1
-generated_by: 'ExtUtils::MakeMaker version 6.78, CPAN::Meta::Converter version 2.132661'
+generated_by: 'ExtUtils::MakeMaker version 6.88, CPAN::Meta::Converter version 2.133380'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,7 +19,8 @@ no_index:
     - t
     - inc
 requires:
+  Exporter: 5.57
   XSLoader: 0
 resources:
   repository: http://github.com/gray/compress-snappy
-version: 0.22
+version: 0.23
